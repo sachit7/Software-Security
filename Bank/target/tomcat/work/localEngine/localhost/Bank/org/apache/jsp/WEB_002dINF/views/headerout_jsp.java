@@ -1,10 +1,10 @@
-package org.apache.jsp;
+package org.apache.jsp.WEB_002dINF.views;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class headerout_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -50,16 +50,29 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n");
-      out.write("<html>\n");
-      out.write("<body>\n");
-      out.write("<h2>Hello World Baby!!!</h2>\n");
-      out.write("<a href=\"test/\">Click to See Roles</a>\n");
-      out.write("</body>\n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n");
+      out.write("<html>\r\n");
+      out.write("<head>\r\n");
+      out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">\r\n");
+      out.write("</head>\r\n");
+      out.write("<body>\r\n");
+      out.write("<div id=\"header\" class=\"container\">\r\n");
+      out.write("<div id=\"logo\">\r\n");
+      out.write("\t\t\t<h1>\r\n");
+      out.write("\t\t\t\t<a href=\"accountsummary.jsp\">Bank Of ASU </a>\r\n");
+      out.write("\t\t\t</h1>\r\n");
+      out.write("\t\t</div>\r\n");
+      out.write("<div id=\"menu\">\r\n");
+      out.write("\t\t\t<ul>\r\n");
+      out.write("\t\t\t\t<li class=\"current_page_item\"><a href=\"login.jsp\" accesskey=\"1\" title=\"\">Homepage</a></li>\r\n");
+      out.write("\t\t\t\t<li><a href=\"#\" accesskey=\"2\" title=\"\">About Us</a></li>\r\n");
+      out.write("\t\t\t\t<li><a href=\"#\" accesskey=\"3\" title=\"\">Contact Us</a></li>\r\n");
+      out.write("\t\t\t</ul>\r\n");
+      out.write("\t\t</div>\r\n");
+      out.write("\t</div>\r\n");
+      out.write("</body>\r\n");
+      out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

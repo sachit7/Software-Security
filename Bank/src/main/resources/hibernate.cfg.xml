@@ -6,6 +6,7 @@
 <hibernate-configuration>
     <session-factory>
         <mapping class="com.asu.edu.form.Role" />
+        <mapping class="com.asu.edu.form.UserAuthentication" />
     </session-factory>
-         
+ 
 </hibernate-configuration>

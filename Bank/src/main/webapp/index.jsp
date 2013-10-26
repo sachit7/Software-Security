@@ -5,6 +5,6 @@
 <html>
 <body>
 <h2>Hello World Baby!!!</h2>
-<a href="test/">Click to See Roles</a>
+<a href="index">Go to Login Page</a>
 </body>
 </html>
