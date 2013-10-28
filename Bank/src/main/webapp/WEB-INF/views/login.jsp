@@ -51,11 +51,33 @@
 				<td><a href="<c:url value="forgot" />"
 					style="color: rgb(0, 255, 0)"><spring:message
 							code="label.forgot" /></a></td>
-				<td><a href="<c:url value="newUser" />" style="color: rgb(0, 255, 0)"><spring:message
+				<td><a href="<c:url value="newUser" />"
+					style="color: rgb(0, 255, 0)"><spring:message
 							code="label.newUser" /></a></td>
 			</tr>
 			<br>
 			<br>
+			<tr>
+				<td></td>
+				<td><script type="text/javascript"
+						src="https://www.google.com/recaptcha/api/challenge?k=6LdIMtgSAAAAAHEwm2t3BSD4GBsFMKBNko6LBOH6">
+																	</script>
+					<noscript>
+						<iframe
+							src="https://www.google.com/recaptcha/api/noscript?k=6LdIMtgSAAAAAHEwm2t3BSD4GBsFMKBNko6LBOH6"
+							height="300" width="500" frameborder="0"></iframe>
+						<br>
+						<textarea name="recaptcha_challenge_field" rows="3" cols="40">
+     																	</textarea>
+						<input type="hidden" name="recaptcha_response_field"
+							value="manual_challenge">
+					</noscript> <%-- <captcha:captcha themeName="white"
+																		publickey="6LdIMtgSAAAAAHEwm2t3BSD4GBsFMKBNko6LBOH6"
+																		privatekey="6LdIMtgSAAAAALIW_Ec3pU6m0OUBV2BMLnNOYCVD" /> --%>
+					<br /> <font color="red"><form:errors path="captcha" /></font> <br />
+				</td>
+
+			</tr>
 			<tr>
 				<td colspan="3"><input type="submit"
 					value="<spring:message code="label.login"/>" /></td>

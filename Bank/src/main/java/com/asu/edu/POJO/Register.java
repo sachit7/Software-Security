@@ -15,6 +15,15 @@ public class Register {
     List deptList;
     List roleList;
     
+	private String captcha;
+
+    
+	public String getCaptcha() {
+		return captcha;
+	}
+	public void setCaptcha(String captcha) {
+		this.captcha = captcha;
+	}
 	public List getDeptList() {
 		return deptList;
 	}

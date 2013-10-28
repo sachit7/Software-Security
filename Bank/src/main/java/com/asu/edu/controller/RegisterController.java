@@ -4,13 +4,20 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 
+import javax.servlet.ServletRequest;
+
+import net.tanesha.recaptcha.ReCaptcha;
+import net.tanesha.recaptcha.ReCaptchaResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.asu.edu.POJO.Login;
 import com.asu.edu.POJO.Register;
@@ -33,19 +40,20 @@ public class RegisterController {
 	private static ArrayList<Role> rolesArray;
 	UserDtls userDtls = new UserDtls();  
 	UserAuthentication userAuth = new UserAuthentication();
-//	ExternalUser extUser = new ExternalUser();
-//	InternalUser intUser = new InternalUser();
-//	
-//	AccountDtls accntDtls = new AccountDtls();
-	
+	//	ExternalUser extUser = new ExternalUser();
+	//	InternalUser intUser = new InternalUser();
+	//	
+	//	AccountDtls accntDtls = new AccountDtls();
+
 
 	@Autowired private RegistrationService registerService;
 	@Autowired private RoleService roleService;
 	@Autowired private DepartmentService deptService;
+	@Autowired private ReCaptcha reCaptcha = null;
 
 
 	@RequestMapping(value="/newUser", method = RequestMethod.GET)
-	public String register(Model model) {
+	public String newUser(Model model) {
 		System.out.println("In Register");
 		initArrays();
 		model.addAttribute("register", new Register());
@@ -60,29 +68,48 @@ public class RegisterController {
 	}
 
 	@RequestMapping(value="registerationPage", method = RequestMethod.POST)
-	public String validateUser(@ModelAttribute("register")Register register,  
-			BindingResult result) {
+	public String registerUser(@ModelAttribute("register")Register register,  
+			BindingResult result,
+			@RequestParam("recaptcha_challenge_field") String challangeField,
+			@RequestParam("recaptcha_response_field") String responseField,
+			ServletRequest servletRequest) {
 
-		prepareModel(register);  
-		if(registerService.saveDetails(userDtls,userAuth))
-			return "success";
-		else
-			return "faliure";
+		if (!result.hasErrors()) {
+			String remoteAddress = servletRequest.getRemoteAddr();
+			ReCaptchaResponse reCaptchaResponse = this.reCaptcha.checkAnswer(
+					remoteAddress, challangeField, responseField);
+			if (!reCaptchaResponse.isValid()) {
+				FieldError fieldError = new FieldError("register",
+						"captcha", "Captcha worong. Please try again.");
+				result.addError(fieldError);
+				System.out.println("Captcha Failed");
+			}
+			else{
+				System.out.println("Captcha Successful");
+				prepareModel(register);  
+				if(registerService.saveDetails(userDtls,userAuth))
+					return "success";
+				else
+					return "faliure";
+			}
+
+		}	
+		return "faliure";
 	}
 
 	private void prepareModel(Register register){  
-		
-		
-		
-		
+
+
+
+
 		userDtls.setFullName(register.getFullName());
 		userDtls.setEmailId(register.getEmail());
 		userDtls.setPhone(register.getPhone());
 		userDtls.setSsn(register.getSsn());
-		
+
 		userAuth.setUserName(register.getUserName());
 		userAuth.setPasswd(register.getPasswd());
-		
+
 
 		//return userDtls;  
 	}

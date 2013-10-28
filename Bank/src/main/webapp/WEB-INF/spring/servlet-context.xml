@@ -81,6 +81,11 @@
 		<property name="sessionFactory" ref="mySessionFactory" />
 	</bean>
 
+	<bean id="recaptcha" class="net.tanesha.recaptcha.ReCaptchaImpl">
+		<property name="privateKey" value="6LdIMtgSAAAAALIW_Ec3pU6m0OUBV2BMLnNOYCVD"></property>
+	</bean>
+
+
 	<!-- Activates annotation based transaction management -->
 	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" />
 </beans>

@@ -5,7 +5,14 @@ public class Login {
     String passwd;
     String userTyp;
     
+    String captcha;
     
+	public String getCaptcha() {
+		return captcha;
+	}
+	public void setCaptcha(String captcha) {
+		this.captcha = captcha;
+	}
 	public String getUserTyp() {
 		return userTyp;
 	}

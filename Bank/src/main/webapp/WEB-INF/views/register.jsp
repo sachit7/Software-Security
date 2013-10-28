@@ -6,6 +6,8 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="captcha" uri="/WEB-INF/tlds/captcha.tld"%>
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Registration Page</title>
 </head>
@@ -83,7 +85,8 @@
 															<td style="color: white">Role:</td>
 															<td><form:select path="roleList">
 																	<c:forEach var="item" items="${roleList}">
-																		<form:option value="${item.roleId }" label="${item.roleName}" />
+																		<form:option value="${item.roleId }"
+																			label="${item.roleName}" />
 																	</c:forEach>
 																</form:select>
 														</tr>
@@ -94,14 +97,15 @@
 														</tr>
 														<tr>
 															<td id="title" style="color: white">Department:</td>
-
-<tr>															<td><form:select path="deptList">
+														<tr>
+															<td><form:select path="deptList">
 																	<c:forEach var="item" items="${deptList}">
-																		<form:option value="${item.deptId }" label="${item.deptName}" />
+																		<form:option value="${item.deptId }"
+																			label="${item.deptName}" />
 																	</c:forEach>
 																</form:select>
 														</tr>
-													<%-- 	<tr>
+														<%-- 	<tr>
 															<td>
 																<table id="depts">
 																	<c:forEach var="item" items="${deptList}">
@@ -117,12 +121,12 @@
 																	</c:forEach>
 																</table>
 															</td>
-														</tr>--%>
+														</tr>
 														<tr>
 															<td colspan="3"><input type="submit"
 																value="<spring:message code="label.register"/>" /></td>
-														</tr>
-														<%--<tr>
+														</tr>--%>
+														<tr>
 															<td></td>
 															<td><div align="left">
 																	<script type="text/javascript"
@@ -139,16 +143,15 @@
      																	</textarea>
 																		<input type="hidden" name="recaptcha_response_field"
 																			value="manual_challenge">
-																	</noscript>--%>
-														<%-- <captcha:captcha themeName="white" 
+																	</noscript>
+																	
+																	<%-- <captcha:captcha themeName="white" 
 																		publickey="6LdIMtgSAAAAAHEwm2t3BSD4GBsFMKBNko6LBOH6"
 																		privatekey="6LdIMtgSAAAAALIW_Ec3pU6m0OUBV2BMLnNOYCVD" /> --%>
-														<%--<br /> <font color="red"><form:errors
-																			path="captcha" /></font> <br />
-																			
-																			 <input id="submit"
+																	<br /> <font color="red"><form:errors
+																			path="captcha" /></font> <br /> <input id="submit"
 																		type="submit" value="Submit" /> <br />
-																</div></td>--%>
+																</div></td>
 													</tbody>
 												</table> <br>
 											</td>
