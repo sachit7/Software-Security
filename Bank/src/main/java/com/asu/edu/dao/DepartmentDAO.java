@@ -8,32 +8,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.asu.edu.form.Department;
 import com.asu.edu.form.Role;
-
 
 @Repository
 @SuppressWarnings({"unchecked", "rawtypes"})
 
-public class RoleDAO {
+
+public class DepartmentDAO {
 	@Autowired private SessionFactory sessionFactory;
+	
 	@Transactional
-	  public List<Role> findAll() {
+	  public List<Department> findAll() {
 		try{
-			System.out.println("in role dao");
+			System.out.println("inside department dao");
+
 		    Session session = sessionFactory.getCurrentSession();
-		    if(session == null){
-		    	System.out.println("Session Null");
-		    }
-		    List roles = session.createQuery("from Role").list();
-		    System.out.println("XYZ in DAO"+((Role)roles.get(0)).getRoleName());
-		    return roles;
+		    List departments = session.createQuery("from Department").list();
+			System.out.println("dep = "+departments.get(1));
+
+		    return departments;
 			
 		}
 		catch(Exception e){
-			System.out.println(e.toString());
 			e.printStackTrace();
 		}
 		return null;
-	   
 	  }
 }

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.asu.edu.POJO.Register;
 import com.asu.edu.form.Role;
 import com.asu.edu.service.RoleService;
 
@@ -21,6 +22,6 @@ public class RoleController {
 	public String list(Model model) {
 		List<Role> roles = roleService.findAllRoles();
 		model.addAttribute("roles", roles);
-		return "login";
+		return "roles";
 	}
 }

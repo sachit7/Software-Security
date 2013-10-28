@@ -5,7 +5,10 @@
  
 <hibernate-configuration>
     <session-factory>
+        <mapping class="com.asu.edu.form.Department" />
         <mapping class="com.asu.edu.form.Role" />
+        <mapping class="com.asu.edu.form.UserAuthentication" />
+        <mapping class="com.asu.edu.form.UserDtls" />
     </session-factory>
-         
+ 
 </hibernate-configuration>

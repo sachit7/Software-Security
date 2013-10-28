@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.asu.edu.POJO.Login;
+import com.asu.edu.POJO.Register;
 import com.asu.edu.form.Role;
 import com.asu.edu.form.UserAuthentication;
 import com.asu.edu.service.LoginService;
@@ -33,6 +34,17 @@ public class LoginController {
  
         return "login";
     }
+	
+//	@RequestMapping("/newUser")
+//    public String register(Model model) {
+//		model.addAttribute("register", new Register());
+//		
+//		//model.put("", new Login());
+//       // map.put("contactList", contactService.listContact());
+// 
+//        return "register";
+//    }
+
 	
 	@RequestMapping(value="loginPage", method = RequestMethod.POST)
 	public String validateUser(@ModelAttribute("login")Login login,  

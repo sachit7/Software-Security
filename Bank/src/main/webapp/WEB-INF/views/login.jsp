@@ -41,23 +41,30 @@
 			<br>
 			<br>
 			<tr>
-				<td><form:radiobutton path="userTyp" value="external" /><spring:message code="label.external" /></td>
-				<td><form:radiobutton path="userTyp" value="internal" /><spring:message code="label.internal" /></td>
+				<td><form:radiobutton path="userTyp" value="external" /> <spring:message
+						code="label.external" /></td>
+				<td><form:radiobutton path="userTyp" value="internal" /> <spring:message
+						code="label.internal" /></td>
 			</tr>
 			<br>
 			<tr>
-			<td><a href="<c:url value="forgot" />" style="color: rgb(0,255,0)"><spring:message code="label.forgot" /></a></td>
-			<td><a href="<c:url value="newUser" />" style="color: rgb(0,255,0)"><spring:message code="label.newUser" /></a></td>
+				<td><a href="<c:url value="forgot" />"
+					style="color: rgb(0, 255, 0)"><spring:message
+							code="label.forgot" /></a></td>
+				<td><a href="<c:url value="newUser" />" style="color: rgb(0, 255, 0)"><spring:message
+							code="label.newUser" /></a></td>
 			</tr>
-			
-			<br><br>
+			<br>
+			<br>
 			<tr>
 				<td colspan="3"><input type="submit"
 					value="<spring:message code="label.login"/>" /></td>
 			</tr>
-			<br><br>
+			<br>
+			<br>
 		</table>
 	</form:form>
+
 
 
 

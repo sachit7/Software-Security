@@ -1,5 +1,6 @@
 package com.asu.edu.form;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,7 +10,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "role")
 public class Role {
-	@Id @GeneratedValue private long roleId;
+	@Id 
+	@Column(name="RoleId")
+	@GeneratedValue private long roleId;
+	@Column(name="RoleName")
 	private String roleName;
 	
 	public long getRoleId() {
