@@ -126,7 +126,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
             out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<br></td>\r\n");
             out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t</tr>\r\n");
             out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t<tr>\r\n");
-            out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td style=\"color: white\">");
+            out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>");
             if (_jspx_meth_form_005flabel_005f0(_jspx_th_form_005fform_005f0, _jspx_page_context, _jspx_push_body_count_form_005fform_005f0))
               return;
             out.write("</td>\r\n");
@@ -158,7 +158,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
             out.write("</font></td>\r\n");
             out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t</tr>\r\n");
             out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t<tr>\r\n");
-            out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td style=\"color: white\">");
+            out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>");
             if (_jspx_meth_form_005flabel_005f1(_jspx_th_form_005fform_005f0, _jspx_page_context, _jspx_push_body_count_form_005fform_005f0))
               return;
             out.write("</td>\r\n");
@@ -190,7 +190,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
             out.write("</font></td>\r\n");
             out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t</tr>\r\n");
             out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t<tr>\r\n");
-            out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td style=\"color: white\">");
+            out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>");
             if (_jspx_meth_form_005flabel_005f2(_jspx_th_form_005fform_005f0, _jspx_page_context, _jspx_push_body_count_form_005fform_005f0))
               return;
             out.write("</td>\r\n");
@@ -222,7 +222,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
             out.write("</font></td>\r\n");
             out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t</tr>\r\n");
             out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t<tr>\r\n");
-            out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td  style=\"color: white\">");
+            out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>");
             if (_jspx_meth_form_005flabel_005f3(_jspx_th_form_005fform_005f0, _jspx_page_context, _jspx_push_body_count_form_005fform_005f0))
               return;
             out.write("</td>\r\n");
@@ -254,7 +254,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
             out.write("</font></td>\r\n");
             out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t</tr>\r\n");
             out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t<tr>\r\n");
-            out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td style=\"color: white\">");
+            out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>");
             if (_jspx_meth_form_005flabel_005f4(_jspx_th_form_005fform_005f0, _jspx_page_context, _jspx_push_body_count_form_005fform_005f0))
               return;
             out.write("</td>\r\n");
@@ -286,7 +286,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
             out.write("</font></td>\r\n");
             out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t</tr>\r\n");
             out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t<tr>\r\n");
-            out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td style=\"color: white\">");
+            out.write("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>");
             if (_jspx_meth_form_005flabel_005f5(_jspx_th_form_005fform_005f0, _jspx_page_context, _jspx_push_body_count_form_005fform_005f0))
               return;
             out.write("</td>\r\n");
@@ -582,7 +582,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.LabelTag _jspx_th_form_005flabel_005f0 = (org.springframework.web.servlet.tags.form.LabelTag) _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath.get(org.springframework.web.servlet.tags.form.LabelTag.class);
     _jspx_th_form_005flabel_005f0.setPageContext(_jspx_page_context);
     _jspx_th_form_005flabel_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/views/register.jsp(35,40) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/register.jsp(35,19) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005flabel_005f0.setPath("fullName");
     int[] _jspx_push_body_count_form_005flabel_005f0 = new int[] { 0 };
     try {
@@ -678,7 +678,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.LabelTag _jspx_th_form_005flabel_005f1 = (org.springframework.web.servlet.tags.form.LabelTag) _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath.get(org.springframework.web.servlet.tags.form.LabelTag.class);
     _jspx_th_form_005flabel_005f1.setPageContext(_jspx_page_context);
     _jspx_th_form_005flabel_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/views/register.jsp(42,40) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/register.jsp(42,19) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005flabel_005f1.setPath("userName");
     int[] _jspx_push_body_count_form_005flabel_005f1 = new int[] { 0 };
     try {
@@ -774,7 +774,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.LabelTag _jspx_th_form_005flabel_005f2 = (org.springframework.web.servlet.tags.form.LabelTag) _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath.get(org.springframework.web.servlet.tags.form.LabelTag.class);
     _jspx_th_form_005flabel_005f2.setPageContext(_jspx_page_context);
     _jspx_th_form_005flabel_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/views/register.jsp(49,40) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/register.jsp(49,19) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005flabel_005f2.setPath("passwd");
     int[] _jspx_push_body_count_form_005flabel_005f2 = new int[] { 0 };
     try {
@@ -870,7 +870,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.LabelTag _jspx_th_form_005flabel_005f3 = (org.springframework.web.servlet.tags.form.LabelTag) _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath.get(org.springframework.web.servlet.tags.form.LabelTag.class);
     _jspx_th_form_005flabel_005f3.setPageContext(_jspx_page_context);
     _jspx_th_form_005flabel_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/views/register.jsp(57,41) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/register.jsp(57,19) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005flabel_005f3.setPath("email");
     int[] _jspx_push_body_count_form_005flabel_005f3 = new int[] { 0 };
     try {
@@ -966,7 +966,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.LabelTag _jspx_th_form_005flabel_005f4 = (org.springframework.web.servlet.tags.form.LabelTag) _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath.get(org.springframework.web.servlet.tags.form.LabelTag.class);
     _jspx_th_form_005flabel_005f4.setPageContext(_jspx_page_context);
     _jspx_th_form_005flabel_005f4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/views/register.jsp(64,40) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/register.jsp(64,19) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005flabel_005f4.setPath("phone");
     int[] _jspx_push_body_count_form_005flabel_005f4 = new int[] { 0 };
     try {
@@ -1062,7 +1062,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.form.LabelTag _jspx_th_form_005flabel_005f5 = (org.springframework.web.servlet.tags.form.LabelTag) _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath.get(org.springframework.web.servlet.tags.form.LabelTag.class);
     _jspx_th_form_005flabel_005f5.setPageContext(_jspx_page_context);
     _jspx_th_form_005flabel_005f5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/views/register.jsp(71,40) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/register.jsp(71,19) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005flabel_005f5.setPath("ssn");
     int[] _jspx_push_body_count_form_005flabel_005f5 = new int[] { 0 };
     try {

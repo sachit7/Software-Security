@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "department")
 public class Department {
@@ -15,7 +14,6 @@ public class Department {
 	@GeneratedValue private long DeptId;
 	@Column(name="DeptName")
 	private String DeptName;
-	
 	public long getDeptId() {
 		return DeptId;
 	}

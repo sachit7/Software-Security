@@ -25,7 +25,7 @@ public class DepartmentDAO {
 
 		    Session session = sessionFactory.getCurrentSession();
 		    List departments = session.createQuery("from Department").list();
-			System.out.println("dep = "+departments.get(1));
+			System.out.println("dep = "+((Department)departments.get(1)).getDeptName());
 
 		    return departments;
 			

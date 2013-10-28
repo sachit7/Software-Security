@@ -1,0 +1,382 @@
+CREATE DATABASE  IF NOT EXISTS `securebanking` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `securebanking`;
+-- MySQL dump 10.13  Distrib 5.6.13, for osx10.6 (i386)
+--
+-- Host: 127.0.0.1    Database: securebanking
+-- ------------------------------------------------------
+-- Server version	5.5.20
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `UserDtls`
+--
+
+DROP TABLE IF EXISTS `UserDtls`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `UserDtls` (
+  `UserId` int(11) NOT NULL AUTO_INCREMENT,
+  `FullName` varchar(45) NOT NULL,
+  `Phone` varbinary(700) NOT NULL,
+  `SSN` varbinary(700) NOT NULL,
+  `EmailId` varbinary(700) NOT NULL,
+  PRIMARY KEY (`UserId`)
+) ENGINE=InnoDB AUTO_INCREMENT=15005 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `UserDtls`
+--
+
+LOCK TABLES `UserDtls` WRITE;
+/*!40000 ALTER TABLE `UserDtls` DISABLE KEYS */;
+INSERT INTO `UserDtls` VALUES (1,'Sachit Dhal','4804383368','1234522','sachit@gmail.com'),(2,'Sachit Dhal','4804383368','12234522','sachitdhal@gmail.com'),(3,'Sachit Dhal','4804383368','2234522','sachitdhal@asu.com'),(4,'Random Name2','ô§?ž¼õ	ÉWQ\0°;Å¶','Íd3_ñìÍÕ;ÎI®5','ª\n®²¤Lzã´äöb'),(5,'Random Name2','ô§?ž¼õ	ÉWQ\0°;Å¶','Íd3_ñìÍÕ;ÎI®5','ª\n®²¤Lzã´äöb'),(15004,'tushar ch','4601234567','123654783','tush@gmail.com');
+/*!40000 ALTER TABLE `UserDtls` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `accountdtls`
+--
+
+DROP TABLE IF EXISTS `accountdtls`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `accountdtls` (
+  `AccountNo` varbinary(700) NOT NULL,
+  `Balance` double DEFAULT '100',
+  `DateOfCreation` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`AccountNo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `accountdtls`
+--
+
+LOCK TABLES `accountdtls` WRITE;
+/*!40000 ALTER TABLE `accountdtls` DISABLE KEYS */;
+INSERT INTO `accountdtls` VALUES ('1112314321',500,'2013-10-28 05:23:30'),('11123143211',100,'2013-10-28 05:23:58'),('12314321',500,'2013-10-28 05:18:34'),('1234321',500,'0000-00-00 00:00:00');
+/*!40000 ALTER TABLE `accountdtls` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `creditdebitdtls`
+--
+
+DROP TABLE IF EXISTS `creditdebitdtls`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `creditdebitdtls` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `TransactionId` int(11) NOT NULL,
+  `AccountNo` varbinary(700) NOT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `ExtTransactionId_idx` (`TransactionId`),
+  KEY `ExtAccountNo_idx` (`AccountNo`),
+  CONSTRAINT `ExtAccountNo` FOREIGN KEY (`AccountNo`) REFERENCES `accountdtls` (`AccountNo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `ExtTransactionId` FOREIGN KEY (`TransactionId`) REFERENCES `exttransactions` (`TransactionId`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `creditdebitdtls`
+--
+
+LOCK TABLES `creditdebitdtls` WRITE;
+/*!40000 ALTER TABLE `creditdebitdtls` DISABLE KEYS */;
+/*!40000 ALTER TABLE `creditdebitdtls` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `department`
+--
+
+DROP TABLE IF EXISTS `department`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `department` (
+  `DeptId` int(11) NOT NULL,
+  `DeptName` varchar(45) NOT NULL,
+  PRIMARY KEY (`DeptId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `department`
+--
+
+LOCK TABLES `department` WRITE;
+/*!40000 ALTER TABLE `department` DISABLE KEYS */;
+INSERT INTO `department` VALUES (1,'HR'),(2,'Sales'),(3,'IT'),(4,'Mgmt'),(5,'TransMonitoring');
+/*!40000 ALTER TABLE `department` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `externaluser`
+--
+
+DROP TABLE IF EXISTS `externaluser`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `externaluser` (
+  `UserId` int(11) NOT NULL,
+  `CustomerID` varchar(45) NOT NULL,
+  `AccountNo` varbinary(700) NOT NULL,
+  `IsLocked` tinyint(1) NOT NULL,
+  `RoleId` int(11) NOT NULL,
+  PRIMARY KEY (`CustomerID`),
+  KEY `UserId_idx` (`UserId`),
+  KEY `AccountNum` (`AccountNo`),
+  CONSTRAINT `AccountNum` FOREIGN KEY (`AccountNo`) REFERENCES `accountdtls` (`AccountNo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `UserId` FOREIGN KEY (`UserId`) REFERENCES `userdtls` (`UserId`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `externaluser`
+--
+
+LOCK TABLES `externaluser` WRITE;
+/*!40000 ALTER TABLE `externaluser` DISABLE KEYS */;
+/*!40000 ALTER TABLE `externaluser` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `exttransactions`
+--
+
+DROP TABLE IF EXISTS `exttransactions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `exttransactions` (
+  `TransactionId` int(11) NOT NULL,
+  `TransationType` int(45) NOT NULL,
+  `Amount` double NOT NULL,
+  `TransTime` time NOT NULL,
+  PRIMARY KEY (`TransactionId`),
+  KEY `TransactionType` (`TransationType`),
+  CONSTRAINT `TransactionType` FOREIGN KEY (`TransationType`) REFERENCES `transactiontype` (`TypeId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `exttransactions`
+--
+
+LOCK TABLES `exttransactions` WRITE;
+/*!40000 ALTER TABLE `exttransactions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `exttransactions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `internaluser`
+--
+
+DROP TABLE IF EXISTS `internaluser`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `internaluser` (
+  `UserId` int(11) NOT NULL,
+  `EmployeeId` varchar(50) NOT NULL,
+  `RoleId` int(11) NOT NULL,
+  `DeptId` int(11) NOT NULL,
+  `IsLocked` tinyint(1) NOT NULL,
+  PRIMARY KEY (`EmployeeId`),
+  KEY `UserId_idx` (`UserId`),
+  KEY `role_idx` (`RoleId`),
+  KEY `DeptId_idx` (`DeptId`),
+  CONSTRAINT `DeptId` FOREIGN KEY (`DeptId`) REFERENCES `department` (`DeptId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `Role` FOREIGN KEY (`RoleId`) REFERENCES `role` (`RoleId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `UserId1` FOREIGN KEY (`UserId`) REFERENCES `userdtls` (`UserId`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `internaluser`
+--
+
+LOCK TABLES `internaluser` WRITE;
+/*!40000 ALTER TABLE `internaluser` DISABLE KEYS */;
+/*!40000 ALTER TABLE `internaluser` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `inttransactions`
+--
+
+DROP TABLE IF EXISTS `inttransactions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `inttransactions` (
+  `TransactionId` int(11) NOT NULL,
+  `TransactionType` int(11) NOT NULL,
+  `FromDept` int(11) NOT NULL,
+  `ToDept` int(11) DEFAULT NULL,
+  `TransDesc` varchar(500) NOT NULL,
+  `TransTime` time NOT NULL,
+  PRIMARY KEY (`TransactionId`),
+  KEY `TransactionType` (`TransactionType`),
+  KEY `FromDeptId` (`FromDept`),
+  KEY `ToDeptId` (`ToDept`),
+  CONSTRAINT `FromDeptId` FOREIGN KEY (`FromDept`) REFERENCES `department` (`DeptId`),
+  CONSTRAINT `IntTransactionType` FOREIGN KEY (`TransactionType`) REFERENCES `transactiontype` (`TypeId`),
+  CONSTRAINT `ToDeptId` FOREIGN KEY (`ToDept`) REFERENCES `department` (`DeptId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `inttransactions`
+--
+
+LOCK TABLES `inttransactions` WRITE;
+/*!40000 ALTER TABLE `inttransactions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `inttransactions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `role`
+--
+
+DROP TABLE IF EXISTS `role`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `role` (
+  `RoleId` int(11) NOT NULL,
+  `RoleName` varchar(45) NOT NULL,
+  PRIMARY KEY (`RoleId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `role`
+--
+
+LOCK TABLES `role` WRITE;
+/*!40000 ALTER TABLE `role` DISABLE KEYS */;
+INSERT INTO `role` VALUES (1,'CorpLvlMgmt'),(2,'DeptMgr'),(3,'RegEmplyoee'),(4,'SysAdmin'),(5,'IndvlUser'),(6,'Merchant');
+/*!40000 ALTER TABLE `role` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `test`
+--
+
+DROP TABLE IF EXISTS `test`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `test` (
+  `str` varchar(32) DEFAULT NULL,
+  `ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `test`
+--
+
+LOCK TABLES `test` WRITE;
+/*!40000 ALTER TABLE `test` DISABLE KEYS */;
+INSERT INTO `test` VALUES ('abc','2013-10-28 05:13:20');
+/*!40000 ALTER TABLE `test` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `transactiontype`
+--
+
+DROP TABLE IF EXISTS `transactiontype`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `transactiontype` (
+  `TypeId` int(11) NOT NULL,
+  `TypeName` varchar(45) NOT NULL,
+  PRIMARY KEY (`TypeId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `transactiontype`
+--
+
+LOCK TABLES `transactiontype` WRITE;
+/*!40000 ALTER TABLE `transactiontype` DISABLE KEYS */;
+INSERT INTO `transactiontype` VALUES (1,'Credit'),(2,'Debit'),(3,'ExtTransfer'),(4,'Payment'),(5,'IntTrans');
+/*!40000 ALTER TABLE `transactiontype` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `transferdtls`
+--
+
+DROP TABLE IF EXISTS `transferdtls`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `transferdtls` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `TransactionId` int(11) NOT NULL,
+  `FromAccNo` varbinary(700) NOT NULL,
+  `ToAccNo` varbinary(700) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `ExtTransferId_idx` (`TransactionId`),
+  KEY `ExtToAccount_idx` (`ToAccNo`),
+  KEY `ExtFromAccount_idx` (`FromAccNo`),
+  CONSTRAINT `ExtFromAccount` FOREIGN KEY (`ToAccNo`) REFERENCES `accountdtls` (`AccountNo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `ExtToAccount` FOREIGN KEY (`FromAccNo`) REFERENCES `accountdtls` (`AccountNo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `ExtTransferId` FOREIGN KEY (`TransactionId`) REFERENCES `exttransactions` (`TransactionId`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `transferdtls`
+--
+
+LOCK TABLES `transferdtls` WRITE;
+/*!40000 ALTER TABLE `transferdtls` DISABLE KEYS */;
+/*!40000 ALTER TABLE `transferdtls` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `userauthentication`
+--
+
+DROP TABLE IF EXISTS `userauthentication`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `userauthentication` (
+  `UserId` int(11) NOT NULL,
+  `UserName` varchar(45) NOT NULL,
+  `Passwd` varbinary(700) DEFAULT NULL,
+  PRIMARY KEY (`UserId`,`UserName`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `userauthentication`
+--
+
+LOCK TABLES `userauthentication` WRITE;
+/*!40000 ALTER TABLE `userauthentication` DISABLE KEYS */;
+INSERT INTO `userauthentication` VALUES (0,'sachitd','-909980770'),(0,'testus','-909980770'),(0,'testuser','-909980770'),(0,'testuser1','-909980770'),(0,'tushar','-909980770'),(1,'test','test'),(2,'sachitdhal','-909980770'),(7,'sachit','sachit7');
+/*!40000 ALTER TABLE `userauthentication` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2013-10-27 22:48:55

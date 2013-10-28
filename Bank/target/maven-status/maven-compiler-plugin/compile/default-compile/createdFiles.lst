@@ -10,10 +10,13 @@ com/asu/edu/form/UserDtls.class
 com/asu/edu/dao/LoginDAO.class
 com/asu/edu/POJO/Register.class
 com/asu/edu/controller/RegisterController.class
+com/asu/edu/form/ExternalUser.class
 com/asu/edu/POJO/Login.class
 com/asu/edu/form/Department.class
 com/asu/edu/service/RoleService.class
 com/asu/edu/service/DepartmentService.class
 com/asu/edu/dao/RegisterDAO.class
+com/asu/edu/form/InternalUser.class
+com/asu/edu/form/AccountDtls.class
 com/asu/edu/service/RegistrationService.class
 com/asu/edu/dao/RoleDAO.class

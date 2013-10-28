@@ -32,21 +32,21 @@
 																<br></td>
 														</tr>
 														<tr>
-															<td style="color: white"><form:label path="fullName">
+															<td><form:label path="fullName">
 																	<spring:message code="label.fullName" />
 																</form:label></td>
 															<td><form:input path="fullName" class="required" /><br />
 																<font color="red"><form:errors path="fullName" /></font></td>
 														</tr>
 														<tr>
-															<td style="color: white"><form:label path="userName">
+															<td><form:label path="userName">
 																	<spring:message code="label.username" />
 																</form:label></td>
 															<td><form:input path="userName" class="required" /><br />
 																<font color="red"><form:errors path="userName" /></font></td>
 														</tr>
 														<tr>
-															<td style="color: white"><form:label path="passwd">
+															<td><form:label path="passwd">
 																	<spring:message code="label.password" />
 																</form:label></td>
 															<td><form:password path="passwd" class="required" />
@@ -54,21 +54,21 @@
 																		path="passwd" /></font></td>
 														</tr>
 														<tr>
-															<td  style="color: white"><form:label path="email">
+															<td><form:label path="email">
 																	<spring:message code="label.email" />
 																</form:label></td>
 															<td><form:input path="email" class="required" /><br />
 																<font color="red"><form:errors path="email" /></font></td>
 														</tr>
 														<tr>
-															<td style="color: white"><form:label path="phone">
+															<td><form:label path="phone">
 																	<spring:message code="label.phone" />
 																</form:label></td>
 															<td><form:input path="phone" class="required" /><br />
 																<font color="red"><form:errors path="phone" /></font></td>
 														</tr>
 														<tr>
-															<td style="color: white"><form:label path="ssn">
+															<td><form:label path="ssn">
 																	<spring:message code="label.ssn" />
 																</form:label></td>
 															<td><form:input path="ssn" class="required" /><br />

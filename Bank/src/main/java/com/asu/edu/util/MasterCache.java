@@ -49,6 +49,7 @@ public class MasterCache {
 				role = new LinkedHashMap<Long, Role>();
 				//RoleDAO dao = new RoleDAO();
 				List<Role> rolelist = roleService.findAllRoles();
+				System.out.println("Role List Length"+rolelist.size());
 				Iterator<Role> itr = rolelist.iterator();	
 
 				while(itr.hasNext()){

@@ -18,8 +18,6 @@ public class UserDtls {
     
 	@Column(name="Phone")
     private String phone;
-	@Column(name="DOB")
-    private String dob;
 	@Column(name="SSN")
     private String ssn;
 	@Column(name="EmailId")
@@ -42,12 +40,6 @@ public class UserDtls {
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
-	public String getDob() {
-		return dob;
-	}
-	public void setDob(String dob) {
-		this.dob = dob;
 	}
 	public String getSsn() {
 		return ssn;
